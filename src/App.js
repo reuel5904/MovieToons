@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LandingPage from "./components/LandingPage";
 import Nav from "./components/Nav";
 import SearchResults from './pages/SearchResults';
 import MovieDetails from './pages/MovieDetails';
 import Discover from './pages/Discover';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   return (

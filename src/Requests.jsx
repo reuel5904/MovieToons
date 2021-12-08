@@ -11,6 +11,3 @@ const requests = {
 
 export default requests;
 
-
-
-// 52b74967f028be8c2e4c82fe1369a733

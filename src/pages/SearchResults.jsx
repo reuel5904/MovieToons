@@ -3,6 +3,8 @@ import axios from '../axios.js'
 import requests from "../Requests.jsx"
 import { useNavigate } from 'react-router'
 import Footer from '../components/Footer.jsx'
+import SkeletonSearch from '../components/SkeletonSearch.jsx'
+import SearchResultMovies from '../components/SearchResultMovies.jsx'
 
 export default function SearchResults() {
     let searchResult = localStorage.getItem("value")
@@ -27,33 +29,14 @@ export default function SearchResults() {
                 <div className="container">
                     <div className="row">
                         <div className="searchResults">
-                            <h2 className="results">{`Results for "${searchResult}" - ${movieResults.filter(movie => movie.poster_path !== null).length}`}</h2>
+                            <h2 className="results">{`Results for "${searchResult}"`}</h2>
                             <div className="search__result--posters">
                                 {
-                                loading ? (
-                                    new Array(9).fill(0).map((_, index) => (
-                                        <div className="skeleton" key={index}>
-                                        <div className="skeleton__body">
-                                            <p className="skeleton__body--skeleton"></p>
-                                        </div>
-                                    </div>
-                                    ))
-                                ) : ( 
-                                movieResults
-                                .filter(movie => movie.poster_path !== null)
-                                .map(movie => (
-                                    <div className="search__result--movies" key={movie.id} onClick={() => navigate(`${movie.id}`)}>
-                                        <img 
-                                        src={`${movie.poster_path === null || undefined ? base_url + movie.poster_path : base_url + movie.poster_path}`} 
-                                        alt={`${movie.name}`} 
-                                        key={movie.id}
-                                        className="row__poster"
-                                        />
-                                        <span className="text-wrapper">
-                                            <p className="search__result--title">{movie.title}</p>
-                                        </span>
-                                    </div>
-                                ))
+                                loading ? 
+                                (new Array(9).fill(0).map((_, index) => (<SkeletonSearch key={index}/>))) 
+                                : 
+                                ( movieResults.filter(movie => movie.poster_path !== null).map(movie => (
+                                <SearchResultMovies movie={movie} base_url={base_url} navigate={navigate} key={movie.id}/>))
                                 )}
                             </div>
                         </div>

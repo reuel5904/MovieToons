@@ -24,7 +24,7 @@ export default function Contact() {
                                     <textarea name="message" className="input" required></textarea>
                                 </div>
                                 <div className="form__item contact__me--wrapper">
-                                    <button className="form__submit">Submit</button>
+                                    <button className="form__submit" onClick={() => alert(`This feature does not work`)}>Submit</button>
                                 </div>
                             </form>
                         </div>
