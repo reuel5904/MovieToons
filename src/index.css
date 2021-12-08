@@ -794,4 +794,7 @@ footer {
   .movie__box--office {
     font-size: 32px;
   }
+  .row_poster {
+    margin: 0;
+  }
 }
