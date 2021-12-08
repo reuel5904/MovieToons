@@ -337,7 +337,6 @@ nav {
   max-width: 300px;
   height: 500px;
   object-fit: cover;
-  margin: 20px;
   position: absolute;
 }
 
@@ -794,7 +793,7 @@ footer {
   .movie__box--office {
     font-size: 32px;
   }
-  .row_poster {
+  .row__poster {
     margin: 0;
   }
 }
