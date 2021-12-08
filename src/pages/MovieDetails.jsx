@@ -58,7 +58,7 @@ export default function MovieDetails() {
                                         .filter(movie => movie.poster_path !== null)
                                         .slice(0, 4)
                                         .map(movie => (
-                                            <div className="search__result--movies" key={movie.id}>
+                                            <div className="search__result--movies" key={movie.id} onClick={() => navigate(`/searchResult/${movie.id}`)}>
                                                 <img 
                                                 src={`${movie.poster_path === null ? '' : base_url + movie.poster_path}`} 
                                                 alt={`${movie.name}`} 
@@ -66,7 +66,7 @@ export default function MovieDetails() {
                                                 className="row__poster"
                                                 />
                                                 <span className="text-wrapper">
-                                                    <p className="search__result--title" onClick={() => navigate(`/searchResult/${movie.id}`)}>{movie.title}</p>
+                                                    <p className="search__result--title">{movie.title}</p>
                                                 </span>
                                             </div>
                                         ))

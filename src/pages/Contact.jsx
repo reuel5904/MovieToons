@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 export default function Contact() {
     return (
         <>
-            <section className="contact__me">
+            <main className="contact__me">
                 <div className="container">
                     <div className="row">
                         <div className="contact__me--wrapper">
@@ -30,7 +30,7 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </main>
             <Footer />
         </>
     )

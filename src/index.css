@@ -759,4 +759,39 @@ footer {
     text-align: center;
     font-size: 8px;
   }
+  .movie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .right__column {
+    margin-right: 0px;
+  }
+  .left__column {
+    padding-left: 0;
+    padding: 0 24px;
+  }
+
+  .left__column, .right__column {
+    width: 100%
+  }
+  .movie__img {
+    max-width: 100%
+  }
+  .movie__release--date {
+    font-size: 20px;
+  }
+  .movie__title {
+    font-size: 48px;
+  }
+  .movie__runtime {
+    font-size: 16px;
+  }
+  .movie__description {
+    font-size: 20px;
+  }
+  .movie__box--office {
+    font-size: 32px;
+  }
 }
